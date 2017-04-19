@@ -1,9 +1,4 @@
-#feet-poster {
-  padding: 7rem;
-  /*display: 10rem;*/
-  border:1px solid black;
-  box-shadow: 5px 5px 5px yellow;
-}
+
 
 div {
   border:1px
@@ -11,12 +6,42 @@ div {
 }
 h1 {
 text-align:center;
+font-family: 'Rancho';
+  font-style: normal;
+  font-weight: 400;
 
 }
 
 body {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin: auto;
 
 
+}
+
+p {
+  color: turqiouse !important;
+}
+
+
+#plot{
+  font-family: 'Shadows Into Light', cursive;
+  color: turqiouse;
+  margin: auto;
+  text-align: center;
+}
+
+header {
+  display: block;
+   margin: auto;
+   width: 40%;
+
+}
+
+img {
+  display: block;
+   margin: auto;
+   width: 40%;
 }
 
 div-title{
