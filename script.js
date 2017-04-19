@@ -38,15 +38,37 @@ function posterGrow(){
     $.ajax({
       url: 'http://www.omdbapi.com/?t=happy+feet',
       success: function(response) {
-        $('#movie-holder').prepend('<div id="theDiv">' + '</div>').prepend($('<img>',{id:'imgFeet',src:"https://images-na.ssl-images-amazon.com/images/M/MV5BMTQyNTkxMjUwMV5BMl5BanBnXkFtZTcwMDQ2NTU0MQ@@._V1_SX300.jpg"}));
-        // $('#theDiv').animate({transform: 'rotate(135deg)'});
-        $('#theDiv').toggle('clip', 5000);
-        $('#theDiv').on("mouseover", function() {
-         $(this).animate({height: '+=20px'},500);
- });
- $('#theDiv').on("mouseout", function() {
-         $(this).animate({height: '-=20px'},500);
- });
+        $('#movie-holder').prepend('<div id="theDiv" class="test">' + '</div>').prepend($('<img>',{id:'imgFeet',src:"https://images-na.ssl-images-amazon.com/images/M/MV5BMTQyNTkxMjUwMV5BMl5BanBnXkFtZTcwMDQ2NTU0MQ@@._V1_SX300.jpg"}));
+
+        var transforms = [
+            'skewY(-45deg) scale(.66)',
+            'translate(20px) skewY(-45deg) scale(.66)',
+            'translate(150px,50px) scale(1.5,1)',
+            'translate(280px) skewY(45deg) scale(.66)',
+            'translate(300px) skewY(45deg) scale(.66)'
+          ],
+          $squares = $('.test').each(function(i) {
+            $(this).css({ transform: transforms[i] });
+          });
+        $('#movie-holder').mouseenter(function() {
+          $squares.each(function(i) {
+            $(this).animate({ transform: transforms[i+1] });
+          });
+        }).mouseleave(function() {
+          $squares.each(function(i) {
+            $(this).animate({ transform: transforms[i] });
+          });
+        });
+
+
+
+        // $('#movie-holder').animate({transform: 'rotate(135deg)'});
+        // $('#movie-holder').toggle('clip', 10000);
+        // $('#theDiv').on("mouseover", function() {
+        //  $(this).animate({height: '+=20px'},500);
+      //  $('#theDiv').on("mouseout", function() {
+      //          $(this).animate({height: '-=20px'},500);
+      //  });
 
       }
     });
