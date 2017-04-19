@@ -1,0 +1,36 @@
+#feet-poster {
+  padding: 7rem;
+  /*display: 10rem;*/
+  border:1px solid black;
+  box-shadow: 5px 5px 5px yellow;
+}
+
+div {
+  border:1px
+  box-shadow: 5px 5px 5px grey !important;
+}
+h1 {
+text-align:center;
+
+}
+
+body {
+
+
+}
+
+div-title{
+text-align: center;
+
+}
+
+#movie-holder {
+margin: auto !important;
+width: 50%;
+border: 3px solid green;
+padding: 10px;
+}
+button {
+margin: auto !important;
+
+}
